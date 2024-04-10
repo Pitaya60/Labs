@@ -1,7 +1,7 @@
-# main.py
+import asyncio
 import calculator
 
-def main():
+async def main():
     print("Добро пожаловать в калькулятор!")
     print("Доступные операции:")
     print("1. Сложение")
@@ -18,14 +18,14 @@ def main():
             num2 = float(input("Введите второе число: "))
 
             if choice == '1':
-                print("Результат сложения:", calculator.add(num1, num2))
+                print("Результат сложения:", await calculator.async_add(num1, num2))
             elif choice == '2':
-                print("Результат вычитания:", calculator.subtract(num1, num2))
+                print("Результат вычитания:", await calculator.async_subtract(num1, num2))
             elif choice == '3':
-                print("Результат умножения:", calculator.multiply(num1, num2))
+                print("Результат умножения:", await calculator.async_multiply(num1, num2))
             elif choice == '4':
                 try:
-                    print("Результат деления:", calculator.divide(num1, num2))
+                    print("Результат деления:", await calculator.async_divide(num1, num2))
                 except ValueError as e:
                     print("Ошибка:", e)
         elif choice == '5':
@@ -35,4 +35,4 @@ def main():
             print("Неверный выбор. Попробуйте снова.")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
