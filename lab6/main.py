@@ -7,6 +7,8 @@ import random
 root = tk.Tk()
 root.title("FRP Animation")
 
+#cjdsnjcdsncji
+
 # Создание холста для отображения анимации
 canvas = tk.Canvas(root, width=400, height=400)
 canvas.pack()
