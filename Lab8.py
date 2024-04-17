@@ -8,7 +8,7 @@ def load_page(url):
 def extract_data(html):
     soup = BeautifulSoup(html, 'html.parser')
     #headings = soup.find_all('h1')
-    information = soup.find_all('p')
+    information = soup.find_all('h2')
     return [information.text.strip() for information in information]
 
 
@@ -18,6 +18,6 @@ def main(url):
     return data
 
 if __name__ == "__main__":
-    url = 'https://pypi.org/project/beautifulsoup4/'
+    url = 'https://www.wildberries.ru/'
     result = main(url)
     print(result)
